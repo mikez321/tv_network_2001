@@ -11,6 +11,13 @@ class Show
       character.info[:salary]
     end
     total.sum
+  end
 
+  def highest_paid_actor
+    pay_rates = characters.sort_by { |character| character.info[:salary] }.reverse
+    pay_rates.first.info[:actor]
+  end
+
+  def actors
   end
 end
