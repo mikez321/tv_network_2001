@@ -12,6 +12,23 @@ class Network
   def main_characters
     shows.map do |show|
       show.characters
-    end.flatten  
+    end.flatten
   end
+
+  def actors_by_show
+    shows.reduce ({}) do |listing, shows|
+
+      if listing.include?(shows)
+        shows << shows.characters
+      else
+        listing[shows.name] = shows.characters
+      end
+      listing
+    end
+  end
+
+    # shows.reduce ({}) do |listing, shows|
+    #   listing[:shows] = shows.characters
+    #   listing
+    # end
 end
