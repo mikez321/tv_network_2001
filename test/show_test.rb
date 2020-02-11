@@ -3,7 +3,7 @@ require './lib/show'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-class CellTest < Minitest::Test
+class ShowTest < Minitest::Test
 
   def test_it_exists
     kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
@@ -43,7 +43,7 @@ class CellTest < Minitest::Test
     kitt = Character.new({name: "KITT", actor: "William Daniels", salary: 1_000_000})
     michael_knight = Character.new({name: "Michael Knight", actor: "David Hasselhoff", salary: 1_600_000})
     knight_rider = Show.new("Knight Rider", "Glen Larson", [michael_knight, kitt])
-    
+
     assert_equal ["David Hasselhoff", "William Daniels"], knight_rider.actors
   end
 
