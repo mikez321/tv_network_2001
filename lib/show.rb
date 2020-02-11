@@ -19,5 +19,9 @@ class Show
   end
 
   def actors
+    characters.map do |character|
+      character.info[:actor]
+    end
   end
+
 end
