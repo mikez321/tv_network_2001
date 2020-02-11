@@ -5,4 +5,12 @@ class Show
     @creator = creator
     @characters = characters
   end
+
+  def total_salary
+    total = characters.map do |character|
+      character.info[:salary]
+    end
+    total.sum
+
+  end
 end
